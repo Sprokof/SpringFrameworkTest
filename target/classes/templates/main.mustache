@@ -1,0 +1,32 @@
+<html>
+<body>
+<div>
+    <div>
+        <form method="post" action="/login">
+            <button type="submit">Выйти:</button>
+        </form>
+    </div>
+    <div>
+    <form method="post" action="/main/add">
+        <label><input  type = "text" name = "text" placeholder="Введите сообщение"/></label>
+        <label><input type  = "text" name = "tag" placeholder="Введите тэг"></label>
+        <button type="submit">Добавить</button>
+    </form>
+   </div>
+</div>
+<div>Поиск по тегу</div>
+<div>
+<form method="post" action="/main/filter">
+    <label><input type = "text" name="tag" placeholder="Тэг"></label>
+    <button type = "submit">Найти</button>
+</form>
+</div>
+<div>Список сообщений</div>
+{{#messages}}
+    <div>
+    <span>{{text}}</span>
+    <i>{{tag}}</i>
+    </div>
+{{/messages}}
+</body>
+</html>
